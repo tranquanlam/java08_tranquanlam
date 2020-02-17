@@ -2,17 +2,19 @@ package Exercise;
 
 public class Bai03 {
 	public static void main(String[] args) {
-		System.out.println(symmetry(111));
+		System.out.println(symmetry(12141));
 	}
 
-	public static boolean symmetry(int a) {
-		Integer number = new Integer(a);
-		String numString = String.valueOf(number);
-		char[] numArray = numString.toCharArray();
-		String numRevese ="";
-		for (int i = numArray.length - 1; i >= 0; i--) {
-			numRevese = numRevese + numArray[i];
+	private static boolean symmetry(int n) {
+		int res = 0, temp = n;
+		while (temp > 0) {
+			res = res * 10 + temp % 10;
+			temp /= 10;
 		}
-		return (numRevese.equals(numString) ?  true :  false);
+		if (res == n) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 }

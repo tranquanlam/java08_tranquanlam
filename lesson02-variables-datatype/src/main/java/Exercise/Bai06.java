@@ -8,7 +8,7 @@ public class Bai06 {
 		int num = 0;
 		while (i != 200) {
 			if (check(j)) {
-				num= j;
+				num = j;
 				i++;
 			}
 			j++;
@@ -17,7 +17,7 @@ public class Bai06 {
 	}
 
 	public static boolean check(int a) {
-		for (int i = 2; i < a / 2; i++) {
+		for (int i = 2; i < a / Math.sqrt(a); i++) {
 			if (a % i == 0) {
 				return false;
 			}
